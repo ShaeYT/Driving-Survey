@@ -1,0 +1,120 @@
+<!DOCTYPE html> <html><head>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Calligraffitti');
+    </style>
+        <title>Driving Survey</title>
+    <style>body{
+    background-color: black;
+    color: gold;
+    font-size: 25px;
+    font-family: 'Calligraffitti', cursive;
+    }
+input{
+    background-color: gold;
+    color: black;
+    height: 50px;
+    width: 350px;
+    font-family: 'Calligraffitti', cursive;
+    font-size: 20px;
+    }
+div{
+    text-align: center;
+    font-family: 'Calligraffitti', cursive;
+    }
+.heading{
+    font-size: 40px;
+    }
+#banner{
+    text-align: center;
+    border: solid gold 15px;
+    border-radius: 25px;
+
+    }
+#btn{
+    font-family: 'Calligraffitti', cursive;
+    background-color: black;
+    color: gold;
+    border: solid 8px gold;
+    border-radius: 15px;
+    }</style></head>
+    <body>
+    <div id="banner">
+    <p class="heading">Today We Are Going To See If You Have The Credentials To Drive 🧐😳🤯😬</p>
+    <p><strong>Answer These Questions Plz</strong></p>
+    </div>
+    <div id="body">
+    <p>What's Your First Name</p>
+    <input id="fname" placeholder="First Name">
+    <p>What's Your Last Name</p>
+    <input id="lname" placeholder="Last Name">
+    <p>How Old Are You?</p>
+    <input id="age" placeholder="Age">
+    <p>When's Your Birthday?</p>
+    <input type="date" id="birthday" placeholder="Birthday">
+    <p>What Color Are Your Eyes?</p>
+    <form id="ageForm">
+    <input id="eyecolor" placeholder="Eyecolor">
+    <input type="radio">Brown
+    <input type="radio">Black
+    <input type="radio">Hazel
+    </form>
+    <button id="btn">Time To See If You Can Drive!!!😱🤗</button>
+    <p id="target1"></p>
+    <p id="target2"></p>
+    <p id="target3"></p>
+    <p id="target4"></p>
+    <p id="target5"></p>
+        </div>
+    
+
+<script>
+/*__POPCODESTART__*/
+var firstname;
+var lastname;
+var age;
+var birthday;
+var eyecolor;
+var you = {
+    firstnameProp : "",
+    lastnameProp : "",
+    ageProp : 0,
+    birthdayProp : 0,
+    eyecolorProp : "",
+    if: function(){
+        if(age>=18){
+    alert("You Can Get Your Driver's License");
+    }else if(age<=17 && age>=16){
+        alert("You Can Get Your Learner's Permit");
+        }else if(age<16){
+            alert("You Are TOO Young To Drive");
+            }
+        },
+    finale: function(){
+        document.getElementById("target1").innerHTML=this.firstnameProp;
+        document.getElementById("target2").innerHTML=this.lastnameProp;
+        document.getElementById("target3").innerHTML=this.ageProp;
+        document.getElementById("target4").innerHTML=this.birthdayProp;
+        document.getElementById("target5").innerHTML=this.eyecolorProp;
+        }
+    };
+
+document.getElementById('btn').addEventListener('click', function() {
+    firstname = document.getElementById("fname").value;
+    lastname = document.getElementById("lname").value;
+    age = document.getElementById("age").value;
+    birthday = document.getElementById("birthday").value;
+    eyecolor = document.getElementById("eyecolor").value;
+    you.firstnameProp = firstname;
+    document.getElementById("lname").innerHTML= lastname;
+    you.lastnameProp = lastname;
+    document.getElementById("age").innerHTML= age;
+    you.ageProp = age;
+    document.getElementById("birthday").innerHTML = birthday;
+    var date= document.getElementById("birthday").value;
+    you.birthdayProp = birthday;
+    document.getElementById("eyecolor").innerHTML = eyecolor;
+    var formInput = document.getElementById("numberForm");
+    you.eyecolorProp= eyecolor;
+    you.if();
+    you.finale();
+});</script></body></html>
